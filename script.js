@@ -1,5 +1,4 @@
 let input = document.querySelector("#input")
-let display = document.querySelector("#display")
 let buttons = document.querySelector(".buttons")
 let expression = ""
 
@@ -22,10 +21,13 @@ buttons.addEventListener("click",function(dets){
         expression = ""
     }
     else if(dets.target.innerText == "X"){
+        if(expression.length >= 15) return;
+
         expression += "*"
         input.value = expression
     }
     else{
+        if(expression.length >= 15) return;
         expression += dets.target.innerText
         input.value = expression
     }
