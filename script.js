@@ -4,6 +4,7 @@ let buttons = document.querySelector(".buttons")
 let expression = ""
 
 buttons.addEventListener("click",function(dets){
+    if(dets.target.tagName !== "BUTTON") return;
     if(dets.target.innerText == "="){
         try{
 
